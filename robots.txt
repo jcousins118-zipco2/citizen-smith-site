@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://citizensmith.uk/sitemap.xml
+Sitemap: https://jcousins118-zipco2.github.io/citizen-smith-site/sitemap.xml

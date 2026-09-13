@@ -1,0 +1,450 @@
+/* ── Citizen Smith V3 — Balanced Layout ── */
+
+:root {
+    --accent: #153b38;
+    --accent-hover: #245a55;
+    --text: #1a1a2e;
+    --text-muted: #777;
+    --bg: #f5f6fa;
+    --card-bg: #fff;
+    --border: #d4d6e2;
+    --border-light: #e0e2ec;
+    --radius: 12px;
+    --radius-lg: 14px;
+}
+
+* { box-sizing: border-box; }
+
+html, body { height: 100%; width: 100%; overflow-x: hidden; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    max-width: none;
+    margin: 0 auto;
+    padding: 0 1rem;
+    line-height: 1.7;
+    color: var(--text);
+    background: #f7f4ec;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-center {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 0 3rem; width: 100%; max-width: 1120px; margin: 0 auto;
+}
+
+.page-center.shifted {
+    justify-content: flex-start;
+}
+
+/* Spacer pushes content down on steps 1-2, hidden on step 3 */
+.page-gen-spacer {
+    flex: 1;
+}
+.page-center.shifted .page-gen-spacer {
+    display: none;
+}
+
+/* ── Top card (header + nav) ── */
+.top-card {
+    background: var(--card-bg);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem 2rem;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 2px 10px rgba(0,0,0,0.03);
+    margin: 0 0 2.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
+    max-width: none; width: 100%;
+}
+.site-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+.site-header a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: inherit;
+}
+.site-mark {
+    width: 56px;
+    height: 56px;
+    background: var(--accent);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: 0.02em;
+}
+.site-name {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text);
+    margin: 0;
+    line-height: 1.2;
+}
+.site-tagline {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin: 0;
+    display: none;
+}
+@media (min-width: 480px) {
+    .site-tagline { display: block; }
+}
+
+/* ── Navigation ── */
+.top-nav {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    padding: 0.6rem 0 0;
+    border-top: 1px solid var(--border-light);
+    margin-top: 0.75rem;
+}
+.top-nav a {
+    color: #777;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.25rem 0.1rem;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+}
+.top-nav a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+/* ── Navigation ── */
+.top-nav {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0.75rem 0 1rem;
+    border-bottom: 1px solid var(--border-light);
+}
+.top-nav a {
+    color: #777;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.25rem 0.1rem;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+}
+.top-nav a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+/* ── Landing ── */
+.landing-wrap {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.landing-intro {
+    font-size: 1.15rem;
+    color: #444;
+    max-width: 760px;
+    width: 100%;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+ .eyebrow { display:block; color:var(--accent); font-size:.78rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; margin-bottom:.75rem; }
+ .trust-row { display:flex; justify-content:center; gap:.6rem; flex-wrap:wrap; margin-top:1.25rem; }
+.trust-row span { background:#e8f1ee; color:#31524e; border:1px solid #d4e3df; border-radius:999px; padding:.35rem .7rem; font-size:.78rem; font-weight:700; }
+
+.sector-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: .8rem;
+    max-width: 900px;
+    width: 100%;
+    margin: 2rem auto 0;
+}
+.sector-card {
+    min-width: 0; width: 100%; margin: 0; text-align: left;
+    background: #fff; color: var(--text); border: 1px solid #d8e2df;
+    padding: 1rem 1.1rem; box-shadow: 0 1px 3px rgba(21,59,56,.05);
+}
+.sector-card strong { display:block; color:var(--accent); font-size:1rem; margin-bottom:.15rem; }
+.sector-card span { display:block; color:#65706e; font-size:.82rem; line-height:1.45; font-weight:500; }
+.sector-card:hover { background:#f0f6f4; border-color:#aac8c1; }
+
+/* ── Headings ── */
+h1 { font-size: clamp(1.85rem, 5vw, 2.4rem); margin: 0 0 0.5rem; font-weight: 700; color: var(--text); }
+h2 {
+    font-size: 1.15rem;
+    margin: 0 0 0.75rem;
+    font-weight: 600;
+    color: #2d2d4a;
+}
+
+/* ── Steps ── */
+.step { display: none; }
+.step.active { display: block; }
+
+
+
+/* ── Progress ── */
+.progress {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 0;
+}
+.progress-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #d4d6e2;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+.progress-dot.active {
+    background: var(--accent);
+    transform: scale(1.35);
+}
+.progress-line {
+    flex: 0 0 28px;
+    height: 2px;
+    background: #d4d6e2;
+    transition: background 0.3s ease;
+}
+.progress-line.done {
+    background: var(--accent);
+}
+.progress-label {
+    font-size: 0.75rem;
+    color: #999;
+    margin-left: 0.6rem;
+    min-width: 4.5rem;
+    white-space: nowrap;
+}
+
+/* ── Select / Button ── */
+select, button {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: #fff;
+    margin: 1rem 0;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23666' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+}
+select:focus {
+    border-color: var(--accent);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(91, 106, 191, 0.12);
+}
+
+button {
+    width: auto;
+    min-width: 140px;
+    cursor: pointer;
+    border: none;
+    font-weight: 600;
+    background: var(--accent);
+    color: #fff;
+    border-radius: var(--radius);
+    padding: 0.75rem 1.5rem;
+    transition: background 0.2s, transform 0.1s;
+    margin: 0.5rem 0;
+}
+button:disabled {
+    background: #d4d6e2;
+    color: #999;
+    cursor: not-allowed;
+}
+button:hover:not(:disabled) { background: var(--accent-hover); }
+button:active:not(:disabled) { transform: scale(0.97); }
+
+.btn-back {
+    background: transparent;
+    color: #777;
+    border: 1px solid var(--border);
+    margin-right: 0.5rem;
+}
+.btn-back:hover:not(:disabled) { background: #edeff8; color: var(--text); border-color: #bbb; }
+
+.btn-row {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-top: 0.25rem;
+}
+
+/* ── Solution heading ── */
+.solution-heading {
+    margin-top: 0; max-width: 760px; margin-left: auto; margin-right: auto;
+    padding-bottom: 0.8rem;
+    border-bottom: 3px solid var(--accent);
+    margin-bottom: 1.5rem;
+}
+
+/* ── Cards ── */
+.step-card,
+.solution-card {
+    background: var(--card-bg);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem 1.75rem;
+    margin: 1.2rem auto; max-width: 760px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 2px 8px rgba(0,0,0,0.03);
+}
+.solution-card h2 {
+    margin-top: 0; max-width: 760px; margin-left: auto; margin-right: auto;
+}
+
+/* ── Source ref ── */
+.source-ref {
+    font-size: 0.82rem;
+    color: #999;
+    margin-top: 0.6rem;
+}
+.source-ref a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+}
+.source-ref a:hover { text-decoration: underline; }
+
+/* ── Section spacing ── */
+section { margin: 1.5rem 0; }
+section p { margin: 0.3rem 0; }
+
+/* ── Lists ── */
+ul { padding-left: 1.2rem; margin: 0.5rem 0; }
+li { margin: 0.3rem 0; }
+
+/* ── Primary link ── */
+.primary-link {
+    display: inline-block;
+    margin-top: 0.3rem;
+    padding: 0.7rem 1.2rem;
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    border-radius: var(--radius);
+    font-weight: 600;
+    transition: background 0.2s;
+}
+.primary-link:hover { background: var(--accent-hover); }
+
+/* ── Copy btn ── */
+.copy-btn {
+    display: inline-block; width: auto;
+    margin-top: 0.5rem; padding: 0.45rem 0.9rem;
+    background: #edeff8; border: 1px solid var(--border); border-radius: 8px;
+    font-size: 0.85rem; cursor: pointer; color: var(--text);
+    transition: background 0.2s;
+}
+.copy-btn:hover { background: #dddef0; }
+.copy-btn.copied { background: #d4edda; border-color: #28a745; color: #155724; }
+
+/* ── Checkboxes ── */
+.keep-check { display: inline-block; width: auto; margin: 0 0.4rem 0 0; vertical-align: middle; }
+.keep-label { display: inline; font-weight: normal; margin: 0; vertical-align: middle; cursor: pointer; color: #333; }
+.keep-check:checked + .keep-label { text-decoration: line-through; color: #aaa; }
+
+/* ── Template textarea ── */
+.doc-page textarea {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1.25rem;
+    font-family: inherit;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: #fff;
+    color: var(--text);
+    resize: none;
+    margin: 0.5rem 0 1rem;
+    white-space: pre-wrap;
+    cursor: default;
+    overflow-y: auto;
+    max-height: 500px;
+}
+
+/* ── Help org blocks ── */
+.help-block {
+    background: var(--card-bg);
+    border: 1px solid #e8eaf2;
+    border-radius: var(--radius);
+    padding: 1rem 1.25rem;
+    margin: 0.8rem 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.help-block p { margin: 0; }
+.help-block a { color: var(--accent); font-weight: 500; word-break: break-all; }
+.help-block a:hover { color: var(--accent-hover); text-decoration: underline; }
+
+/* ── Footer ── */
+.site-footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-light);
+    font-size: 0.8rem;
+    color: #aaa;
+    text-align: center;
+}
+.site-footer a {
+    color: #999;
+    text-decoration: none;
+}
+.site-footer a:hover { color: var(--accent); }
+
+/* ── Doc page ── */
+.doc-page { max-width: 720px; margin: 0 auto; }
+
+/* ── Mobile ── */
+@media (max-width: 600px) {
+    body { padding: 0 1rem 2rem; }
+    .page-center, .landing-wrap, .landing-intro, .sector-grid, .step, .step-card, .solution-card { width: 100%; max-width: 100%; }
+    .landing-intro h1, .landing-intro p, .eyebrow { max-width: 100%; overflow-wrap: break-word; }
+    .trust-row { max-width: 100%; }
+    .site-mark { width: 46px; height: 46px; font-size: 1.3rem; border-radius: 12px; }
+    .site-name { font-size: 1.25rem; }
+    h1 { font-size: 1.6rem; line-height: 1.25; }
+    .eyebrow { font-size: .64rem; letter-spacing: .07em; }
+    select, button { font-size: 0.95rem; padding: 0.65rem 0.8rem; }
+    .top-card { padding: 1rem 1.25rem; flex-direction: column; align-items: flex-start; gap: .5rem; }
+    .step-card, .solution-card { padding: 1.25rem; }
+    .sector-grid { grid-template-columns: 1fr; gap: .6rem; }
+    .landing-wrap { margin-bottom: 1.25rem; }
+}
+
+@media (max-width: 600px) {
+  .page-center, .landing-wrap, .landing-intro, .sector-grid, .step, .step-card, .solution-card, .trust-row {
+    min-width: 0;
+    width: calc(100vw - 2rem);
+    max-width: calc(100vw - 2rem);
+  }
+  .landing-intro p { margin-left: auto; margin-right: auto; }
+  .trust-row { margin-left: auto; margin-right: auto; }
+}

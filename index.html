@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citizen Smith — Understand your rights. Take the next step.</title>
+    <meta name="description" content="Free, source-led UK rights guidance for debt, housing, energy, telecoms, benefits and employment problems.">
+    <meta name="theme-color" content="#153b38">
+    <link rel="canonical" href="https://citizensmith.uk/">
+    <meta property="og:title" content="Citizen Smith — Understand your rights. Take the next step.">
+    <meta property="og:description" content="Free, source-led UK rights guidance for common debt, housing, energy, telecoms, benefits and employment problems.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://citizensmith.uk/">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+    <main class="page-center">
+        <div class="page-gen-spacer"></div>
+        <div class="top-card">
+            <div class="site-header">
+                <a href="./">
+                    <div class="site-mark">CS</div>
+                    <div>
+                        <div class="site-name">Citizen Smith</div>
+                        <p class="site-tagline">Free legal guidance, plain English, no sign-up</p>
+                    </div>
+                </a>
+            </div>
+            <div class="top-nav">
+                <a href="./">Home</a>
+                <a href="pages/about.html">How this works</a>
+                <a href="pages/sources.html">Sources</a>
+                <a href="pages/disclaimer.html">Disclaimer</a>
+            </div>
+        </div>
+
+        <div class="landing-wrap">
+            <div class="landing-intro">
+                <span class="eyebrow">UK rights guidance, without the legal fog</span>
+                <h1>Understand your rights.<br>Take the next step.</h1>
+                <p>Stuck dealing with a bank, landlord, energy company, benefits office, phone provider or employer? Pick the problem and Citizen Smith will show you the likely rule, what evidence to keep, and where to go next.</p>
+                <div class="trust-row"><span>Free</span><span>No sign-up</span><span>No tracking</span><span>Source-led</span></div>
+            </div>
+            <div class="sector-grid" aria-label="Choose an area">
+                <button type="button" class="sector-card" data-sector="debt"><strong>Debt &amp; credit</strong><span>Banks, lenders, collectors and credit files</span></button>
+                <button type="button" class="sector-card" data-sector="housing"><strong>Housing</strong><span>Repairs, damp, heating and landlord problems</span></button>
+                <button type="button" class="sector-card" data-sector="energy"><strong>Energy</strong><span>Bills, meters, debt and supplier disputes</span></button>
+                <button type="button" class="sector-card" data-sector="telecoms"><strong>Phone &amp; internet</strong><span>Billing, contracts and service failures</span></button>
+                <button type="button" class="sector-card" data-sector="benefits"><strong>Benefits</strong><span>PIP, ESA, Universal Credit and DWP decisions</span></button>
+                <button type="button" class="sector-card" data-sector="employment"><strong>Employment</strong><span>Pay, dismissal, discrimination and redundancy</span></button>
+            </div>
+        </div>
+
+        <div class="progress">
+            <span class="progress-dot active" id="pdot-1"></span>
+            <span class="progress-line" id="pline-1"></span>
+            <span class="progress-dot" id="pdot-2"></span>
+            <span class="progress-line" id="pline-2"></span>
+            <span class="progress-dot" id="pdot-3"></span>
+            <span class="progress-label" id="progress-label">Your situation</span>
+        </div>
+
+        <div id="step-1" class="step active">
+            <div class="step-card">
+                <h2 id="sector-heading">What type of problem do you have?</h2>
+                <select id="sector" aria-labelledby="sector-heading">
+                    <option value="" disabled selected>What's your situation?</option>
+                    <option value="debt">Debt &amp; Credit</option>
+                    <option value="housing">Housing</option>
+                    <option value="energy">Energy</option>
+                    <option value="telecoms">Telecoms &amp; Internet</option>
+                    <option value="benefits">Benefits</option>
+                    <option value="employment">Employment</option>
+                </select>
+                <div class="btn-row">
+                    <button type="button" id="to-step-2" disabled>Next</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="step-2" class="step">
+            <div class="step-card">
+                <h2 id="issue-heading">What exactly is happening?</h2>
+                <select id="issue" aria-labelledby="issue-heading">
+                    <option value="" disabled selected>What's the issue?</option>
+                </select>
+                <div class="btn-row">
+                    <button type="button" id="to-step-3" disabled>Next</button>
+                    <button type="button" class="btn-back" data-back="1">Back</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="step-3" class="step">
+            <div id="solution-content"></div>
+            <div class="btn-row" style="margin-top:0.5rem;">
+                <button type="button" class="btn-back" data-back="2">Back</button>
+            </div>
+        </div>
+    </main>
+
+    <div class="site-footer">
+        General information, not legal advice. <a href="pages/about.html">How this works</a> · <a href="pages/sources.html">Sources</a> · <a href="pages/disclaimer.html">Disclaimer</a>.
+    </div>
+
+    <script src="assets/logic.js"></script>
+</body>
+</html>
